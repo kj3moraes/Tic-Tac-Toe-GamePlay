@@ -2,4 +2,7 @@
 
 Once you run the game TicTacToeGame executable you will see an intro message followed by the menu to select your opponent difficulty.
 
-### Difficulty Menu 
+## Difficulty Menu
+
+The difficulty menu lists the possible difficulties 
+
