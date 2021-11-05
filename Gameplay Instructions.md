@@ -4,7 +4,8 @@ Once you run the game TicTacToeGame executable you will see an intro message fol
 
 ## Difficulty Menu
 
-The difficulty menu lists the possible difficulties 
+The difficulty menu lists the possible difficulties:
+
 
 Note that the Hard Engine is **unbeatable** (i.e you can only draw and lose against it). It will always play perfectly.
 

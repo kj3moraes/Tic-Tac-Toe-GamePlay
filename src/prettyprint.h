@@ -31,7 +31,7 @@ class PrettyPrint {
         void provideHelp();
         void printHeader();
         void printLicense();
-        void print
+        void printWarranty();
 };
 
 #endif
