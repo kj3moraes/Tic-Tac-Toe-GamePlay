@@ -24,3 +24,27 @@ using namespace std;
 PrettyPrint::PrettyPrint() {
 
 }
+
+void PrettyPrint::provideHelp() {
+    
+}
+
+void PrettyPrint::printLicense() {
+    cout << bold << "TicTacToeGame Copyright (C) 2021 Keane Moraes" << unbold << endl;
+    cout << "This program comes with ABSOLUTELY NO WARRANTY;" << endl;
+    cout << "for details type `warr'. This is free software, and you are welcome" << endl;
+    cout << "to redistribute it under certain conditions; type `cond' for details." << endl;
+}
+
+std::ostream& bold(std::ostream& os) {
+    return os << "\e[1m";
+}
+
+std::ostream& unbold(std::ostream& os) {
+    return os << "\e[0m"; 
+}
+
+int main() {
+    PrettyPrint p;
+    p.printLicense();
+}

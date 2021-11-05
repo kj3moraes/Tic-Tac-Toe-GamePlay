@@ -1,12 +1,10 @@
 #ifndef PLAYER_H
 #define PLAYER_H
-
+#include "board.h"
 class Player {
     protected:
-        const static char X = 'X';
-        const static char O = 'O';
-
     public:
-        virtual int makeAMove() = 0;
+        char playerType;
+        virtual int makeAMove(Board *game) = 0;
 };
 #endif

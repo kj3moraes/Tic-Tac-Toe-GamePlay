@@ -34,4 +34,8 @@ class PrettyPrint {
         void printWarranty();
 };
 
+std::ostream& bold(std::ostream& os);
+
+std::ostream& unbold(std::ostream& os);
+
 #endif

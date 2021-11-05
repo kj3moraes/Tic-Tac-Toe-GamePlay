@@ -1,16 +1,17 @@
 CXX = g++
-CXXFLAGS = -std=c++14 -g -Wall -Werror=vla -MMD
+CXXFLAGS = -std=c++14 -Wall
 EXEC = TicTacToeGame
 PROJECT_DIR = ./src
-OBJECTS = main.o prettyprint.o player.o easy.o intermediate.o hard.o human.o 
-DEPENDS = ${OBJECTS:.o=.d}
+OBJECT_DIR = ./build
+OBJECTS = ${OBJECT_DIR}/*
 
 ${EXEC}: ${OBJECTS}
   ${CXX} ${CXXFLAGS} ${OBJECTS} -o ${EXEC}
-  
--include ${DEPENDS}
+
+${OBJECT_DIR}/%.o: %.c
+	${CXX} ${CXXFLAGS} -c -o $@ $<
 
 .PHONY: clean
 clean:
-	echo "Cleaning...."
-	rm ${OBJECTS} ${EXEC} ${DEPENDS}
+	@echo "Cleaning...."
+	rm ${OBJECTS} ${EXEC} 

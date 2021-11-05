@@ -9,9 +9,9 @@ A text-based Tic-Tac-Toe game interface that offers 3 options to the player :
 ## How do I play the game ?
 
 1. Clone the repository
-2. Navigate into the directory
-3. Open a terminal in that directory
-4. Type ``make``
-5. An executable called TicTacToeGame will be created. Run ```./TicTacToeGame```.  
+2. Navigate into the directory and open a terminal in that directory
+3. Type ``make`` which creates an executable TicTacToeGame
+4. Type ```./TicTacToeGame```.  
 
-Refer to the Gameplay Instructions file to see how to format inputs and seek help in-game
+Refer to the Gameplay Instructions file to see how to format inputs in order to correctly play the game
+and / or seek help in-game

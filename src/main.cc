@@ -1,7 +1,8 @@
 /**
  * @file main.cc
  * @author your name (you@domain.com)
- * @brief 
+ * @brief The main program that allows the user to interact with 
+ * the program and play the game.
  *
     Copyright (C) 2021 Keane Moraes
 
@@ -19,6 +20,8 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  * 
  */
+#include <iostream>
+#include <string>
 #include "prettyprint.h"
 #include "opponents/player.h"
 #include "opponents/human.h"
@@ -26,8 +29,16 @@
 #include "opponents/engines/easy.h"
 #include "opponents/engines/medium.h"
 #include "opponents/engines/hard.h"
+#include "services/board.h"
+#include "services/result.h"
 using namespace std;
 
 int main() {
+    PrettyPrint painter;
+    painter.printHeader();
+    
+    Player *player1;
+    Player *player2;
+
 
 }

@@ -33,4 +33,5 @@ The rows start from 1 to 3 from left to right and columns are from 1 to 3 from t
 
 ### References
 
-[1] DavidHurst's [repository](https://github.com/DavidHurst/MiniMax-TicTacToe-Java) on Tic-Tac-Toe.
+[1] DavidHurst's [repository](https://github.com/DavidHurst/MiniMax-TicTacToe-Java) on Tic-Tac-Toe.  
+[2] Robert Heaton' [blog on Tic-Tac-Toe](https://robertheaton.com/2018/10/09/programming-projects-for-advanced-beginners-3-a/)
