@@ -2,9 +2,6 @@
  * @file prettyprint.h
  * @author Keane Moraes (keanejonathan3@gmail.com)
  * @brief 
- * @version 0.1
- * @date 2021-11-05
- * 
  *
     Copyright (C) 2021 Keane Moraes
 
@@ -33,6 +30,8 @@ class PrettyPrint {
 
         void provideHelp();
         void printHeader();
+        void printLicense();
+        void print
 };
 
 #endif

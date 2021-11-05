@@ -1,10 +1,7 @@
 /**
  * @file prettyprint.cc
  * @author Keane Moraes (keanejonathan3@gmail.com)
- * @brief 
- * @version 0.1
- * @date 2021-11-05
- * 
+ * @brief Program 
  *
     Copyright (C) 2021 Keane Moraes
 

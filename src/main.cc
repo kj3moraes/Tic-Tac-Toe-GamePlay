@@ -2,9 +2,6 @@
  * @file main.cc
  * @author your name (you@domain.com)
  * @brief 
- * @version 0.1
- * @date 2021-11-05
- * 
  *
     Copyright (C) 2021 Keane Moraes
 
