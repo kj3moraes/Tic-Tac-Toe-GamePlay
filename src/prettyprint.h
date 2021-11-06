@@ -1,8 +1,9 @@
 /**
  * @file prettyprint.h
  * @author Keane Moraes (keanejonathan3@gmail.com)
- * @brief 
- *
+ * @brief Class to handle any formatted printing / IO that the game
+ * is supposed to do
+ * 
     Copyright (C) 2021 Keane Moraes
 
     This program is free software: you can redistribute it and/or modify
@@ -21,21 +22,19 @@
 #ifndef PRETTYPRINT_H
 #define PRETTYPRINT_H
 #include <string>
+#include <iomanip>
 #include <iostream>
 
-class PrettyPrint {
+class PrettyPrint final {
     public:
-        PrettyPrint();
-        ~PrettyPrint();
-
-        void provideHelp();
-        void printHeader();
-        void printLicense();
-        void printWarranty();
+        static void provideHelp();
+        static void printHeader();
+        static void printLicense();
+        static void printWarranty();
+        static void printRedistributionConditions();
 };
 
 std::ostream& bold(std::ostream& os);
-
 std::ostream& unbold(std::ostream& os);
 
 #endif

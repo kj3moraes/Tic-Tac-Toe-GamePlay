@@ -3,7 +3,7 @@
 
 class Medium final: public Engine {
     public:
-        int makeAMove() override;
+        int makeAMove(Board *game) override;
         
 
 };

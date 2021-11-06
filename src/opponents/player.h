@@ -1,10 +1,14 @@
 #ifndef PLAYER_H
 #define PLAYER_H
-#include "board.h"
+class Board;
+
 class Player {
     protected:
-    public:
         char playerType;
+        
+    public:
+        Player(char playerType = 'H');
+        ~Player();
         virtual int makeAMove(Board *game) = 0;
 };
 #endif

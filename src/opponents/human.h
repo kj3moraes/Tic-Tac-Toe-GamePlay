@@ -1,13 +1,16 @@
 #ifndef HUMAN_H
 #define HUMAN_H
+#include "player.h"
+#include <string>
+#include <iostream>
+class Board;
 
-class Human final: public Player {
-    const int DIFFICULTY_IDENTIFIER = 4;
+class Human: public Player {
 
-    int* acceptCoordinates();
+    bool acceptCoordinates(int &row, int &col);
 
     public:
-        Human();
+        Human(char playerType = 'H');
         ~Human();
 
         int makeAMove(Board *game) override;

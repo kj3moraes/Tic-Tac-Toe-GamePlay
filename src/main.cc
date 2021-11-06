@@ -34,11 +34,8 @@
 using namespace std;
 
 int main() {
-    PrettyPrint painter;
-    painter.printHeader();
-    
-    Player *player1;
-    Player *player2;
-
-
+    PrettyPrint::printHeader();
+    PrettyPrint::printLicense();
+    PrettyPrint::printWarranty();
+    PrettyPrint::printRedistributionConditions();
 }
