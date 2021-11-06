@@ -1,5 +1,5 @@
 /**
- * @file board.h
+ * @file result.h
  * @author your name (you@domain.com)
  * @brief The header file for the Board object to manage all things
  * that occur on the TTT Board.

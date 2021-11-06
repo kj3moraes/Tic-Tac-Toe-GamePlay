@@ -1,6 +1,6 @@
 /**
  * @file easy.h
- * @author your name (you@domain.com)
+ * @author Keane Moraes (keanejonathan3@gmail.com)
  * @brief The main program that allows the user to interact with 
  * the program and play the game.
  *
@@ -20,12 +20,15 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  * 
  */
+#include "engine.h"
 #ifndef EASY_H
 #define EASY_H
 class Board;
 
 class Easy final: public Engine {
     public:
+        Easy();
+        ~Easy();
         int makeAMove(Board *game) override;
         
 };

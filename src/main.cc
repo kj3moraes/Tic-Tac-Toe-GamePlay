@@ -33,9 +33,12 @@
 #include "services/result.h"
 using namespace std;
 
-int main() {
+int main(int argv, char *argc[]) {
+    if (argv > 0) {
+
+    }
+    
     PrettyPrint::printHeader();
     PrettyPrint::printLicense();
-    PrettyPrint::printWarranty();
-    PrettyPrint::printRedistributionConditions();
+
 }
