@@ -19,7 +19,8 @@ and / or seek help in-game
 ## What command line arguments can I pass to the TicTacToeGame executable ?
 
 There are several command line arguments that you can pass to learn more about
-how to play and / or about the implementation
+how to play and / or about the implementation. These will print the relevant
+information and then exit with a zero-exit status.
 
 * _-v_, _--version_ prints the version of the executable
 * _-h_, _--help_ is equivalent to in-game help

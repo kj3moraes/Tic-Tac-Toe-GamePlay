@@ -21,10 +21,12 @@
  */
 #ifndef RESULT_H
 #define RESULT_H
+#include "board.h"
 
+class Board;
 class Result final {
     public:
-        bool isWin();
+        static bool isWinner(Board *game, char playerType);
         
 };
 #endif

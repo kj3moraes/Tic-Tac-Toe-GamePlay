@@ -1,6 +1,6 @@
 /**
  * @file board.h
- * @author your name (you@domain.com)
+ * @author Keane Moraes
  * @brief The header file for the Board object to manage all things
  * that occur on the TTT Board.
     Copyright (C) 2021 Keane Moraes
@@ -37,12 +37,14 @@ class Board {
         Board(char configuration[rows][cols]);
         ~Board();
 
+        int getNO_OF_ROWS();
+        int getNO_OF_COLUMNS();
+
         bool isTileMarked(int row, int col);
         char getPiece(int row, int col);
         bool isBoardFull();
-        bool placePiece(int row, int col);
+        bool placePiece(int row, int col, char playerType);
         void removePiece(int row, int col);
-
         void displayBoard();
         
 };
