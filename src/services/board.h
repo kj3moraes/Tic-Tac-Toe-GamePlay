@@ -39,6 +39,8 @@ class Board {
 
         int getNO_OF_ROWS();
         int getNO_OF_COLUMNS();
+        int getX();
+        int getO();
 
         bool isTileMarked(int row, int col);
         char getPiece(int row, int col);

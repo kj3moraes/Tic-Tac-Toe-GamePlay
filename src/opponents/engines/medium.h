@@ -22,6 +22,7 @@
 #include "engine.h"
 #include "../../services/board.h"
 #include "../../services/result.h"
+#include <iostream>
 #ifndef MEDIUM_H
 #define MEDIUM_H
 class Board;
@@ -30,7 +31,7 @@ class Medium final: public Engine {
     int* findWinningMove(Board *game, char playerType);
 
     public:
-        Medium();
+        Medium(char playerType = 'X');
         ~Medium();
         int makeAMove(Board *game) override;
 };
