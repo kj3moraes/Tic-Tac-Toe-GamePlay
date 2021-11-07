@@ -1,8 +1,9 @@
 /**
  * @file prettyprint.h
  * @author Keane Moraes (keanejonathan3@gmail.com)
- * @brief Class to handle any formatted printing / IO that the game
- * is supposed to do
+ * @brief Header for a class that handles any formatted
+ * printing / IO that the game is supposed to do
+ * 
  * 
     Copyright (C) 2021 Keane Moraes
 
@@ -27,10 +28,48 @@
 
 class PrettyPrint final {
     public:
+
+        /**
+         * @brief Function prints multiple useful commands
+         * and their correct usage that the user may need
+         * to know in order to play properly.
+         */
         static void provideHelp();
+
+        /**
+         * @brief 
+         * 
+         */
         static void printHeader();
+
+        /**
+         * @brief 
+         * 
+         */
         static void printLicense();
+
+        /**
+         * @brief 
+         * 
+         */
         static void printWarranty();
+
+        /**
+         * @brief 
+         * 
+         */
+        static void printVersion();
+
+        /**
+         * @brief 
+         * 
+         */
+        static void printSelectedGameInfo();
+
+        /**
+         * @brief 
+         * 
+         */
         static void printRedistributionConditions();
 };
 

@@ -22,8 +22,8 @@
 #define ENGINE_H
 #include <random>
 #include <string>
-#include "player.h"
-#include "board.h"
+#include "../player.h"
+#include "../../services/board.h"
 class Board;
 
 class Engine: public Player {

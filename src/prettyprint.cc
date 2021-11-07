@@ -49,9 +49,9 @@ void PrettyPrint::printHeader() {
     cout << std::setfill(' ') << std::setw(16) << "/  /";
     cout << std::setfill(' ') << std::setw(16) << "/  /" << endl;
 
-    cout << std::setfill(' ') << std::setw(9) << "---- i c";
-    cout << std::setfill(' ') << std::setw(16) << "---- a c";
-    cout << std::setfill(' ') << std::setw(16) << "---- o e" << endl;
+    cout << std::setfill(' ') << std::setw(6) << "---- " << bold << "i c" << unbold;
+    cout << std::setfill(' ') << std::setw(13) << "---- " << bold << "a c" << unbold;
+    cout << std::setfill(' ') << std::setw(13) << "---- " << bold << "o e" << unbold << endl;
 
     cout << "\n" ;
     cout << "This is a text-based game interface for Tic-Tac-Toe created by Keane Moraes.\n"
@@ -77,6 +77,17 @@ void PrettyPrint::printWarranty() {
 
 void PrettyPrint::printRedistributionConditions() {
     cout << "\nRefer to the page on GNU GPLv3 at <https://www.gnu.org/licenses/>" << endl;
+}
+
+void PrettyPrint::printVersion() {
+    cout << "TicTacToeGame: v1.0.1" << endl;
+}
+
+void PrettyPrint::printSelectedGameInfo() {
+    cout << "\nThe game Tic-Tac-Toe is played on a standard 3x3 with"
+        " Player 1 playing X's and\nPlayer 2 playing O's. In this game engine,"
+        "you can choose which player you wanna\nand which opponent you want to play against\n"
+        "\t1. Human\n\t2. Easy\n\t3. Medium\n\t4. Hard" << endl;
 }
 
 std::ostream& bold(std::ostream& os) {

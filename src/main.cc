@@ -1,6 +1,6 @@
 /**
  * @file main.cc
- * @author your name (you@domain.com)
+ * @author Keane Moraes (keanejonathan3@gmail.com)
  * @brief The main program that allows the user to interact with 
  * the program and play the game.
  *
@@ -33,12 +33,29 @@
 #include "services/result.h"
 using namespace std;
 
-int main(int argv, char *argc[]) {
-    if (argv > 0) {
+void handleCommandLineArgs(int &argc, char *argv[]) {
+    string command = (string)(argv[1]);
+    if (command == "--info" || command == "-i") {
+        PrettyPrint::printHeader();
+        PrettyPrint::printSelectedGameInfo();
+    } else if (command == "--help" || command == "-h") {
+        PrettyPrint::provideHelp();
+    } else if (command == "--version" || command == "-v") {
+        PrettyPrint::printVersion();
+    } else if (command == "") {
+        
+    } else {
+        cerr << "Invalid command line argument. Refer to README file" << endl;
+    }
+}
 
+int main(int argc, char *argv[]) {
+    if (argc > 1) {
+        handleCommandLineArgs(argc, argv);
+        return 0;
     }
     
     PrettyPrint::printHeader();
     PrettyPrint::printLicense();
-
 }
+

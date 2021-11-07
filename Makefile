@@ -8,9 +8,6 @@ OBJECTS = ${OBJECT_DIR}/*
 ${EXEC}: ${OBJECTS}
   ${CXX} ${CXXFLAGS} ${OBJECTS} -o ${EXEC}
 
-${OBJECT_DIR}/%.o: %.c
-	${CXX} ${CXXFLAGS} -c -o $@ $<
-
 .PHONY: clean
 clean:
 	@echo "Cleaning...."

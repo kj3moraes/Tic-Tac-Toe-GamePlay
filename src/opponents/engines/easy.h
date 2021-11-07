@@ -21,6 +21,7 @@
  * 
  */
 #include "engine.h"
+#include "../../services/board.h"
 #ifndef EASY_H
 #define EASY_H
 class Board;
