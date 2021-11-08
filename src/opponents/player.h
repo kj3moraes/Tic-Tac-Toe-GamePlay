@@ -31,6 +31,6 @@ class Player {
     public:
         Player(char playerType = 'H');
         ~Player();
-        virtual int makeAMove(Board *game) = 0;
+        virtual void makeAMove(Board *game) = 0;
 };
 #endif

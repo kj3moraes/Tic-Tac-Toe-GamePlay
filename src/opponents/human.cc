@@ -28,7 +28,7 @@ Human::Human(char splayerType) {
 
 Human::~Human() {}
 
-int Human::makeAMove(Board *game) {
+void Human::makeAMove(Board *game) {
     bool isMoveValid;
     int row, col;
     do {
@@ -37,6 +37,7 @@ int Human::makeAMove(Board *game) {
             std::cout << "Your input is invalid. Refer to the Gameplay Instructions file for the inputting format";
         }
     } while(!isMoveValid);
+    game->placePiece(row, col, this->playerType);
 }
 
 bool Human::acceptCoordinates(int &row, int &col) {

@@ -29,7 +29,7 @@ class Hard final: public Engine {
     public:
         Hard();
         ~Hard();
-        int makeAMove(Board *game) override;
+        void makeAMove(Board *game) override;
 };
 
 #endif

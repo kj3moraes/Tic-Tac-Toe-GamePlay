@@ -43,6 +43,6 @@ int* Engine::generateRandomPosition() {
  */
 void Engine::placePieceRandomly(Board *game) {
     int *randomCoords = generateRandomPosition();
-    game->placePiece(randomCoords[0], randomCoords[1]);
+    game->placePiece(randomCoords[0], randomCoords[1], this->playerType);
     delete[] randomCoords;
 }

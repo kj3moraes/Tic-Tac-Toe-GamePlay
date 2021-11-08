@@ -31,7 +31,7 @@ class Easy final: public Engine {
     public:
         Easy();
         ~Easy();
-        int makeAMove(Board *game) override;
+        void makeAMove(Board *game) override;
         
 };
 

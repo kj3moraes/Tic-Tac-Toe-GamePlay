@@ -43,7 +43,7 @@ int *Medium::findWinningMove(Board *game, char playerType) {
     return nullptr;
 }
 
-int Medium::makeAMove(Board *game) {
+void Medium::makeAMove(Board *game) {
     std::cout << "\nThe medium engine is making its move..." << std::endl;
 
     int *winningCoords = nullptr;
@@ -54,7 +54,7 @@ int Medium::makeAMove(Board *game) {
         game->placePiece(winningCoords[0], winningCoords[1], this->playerType);
         game->displayBoard();
         delete [] winningCoords;
-        return 1;
+        return ;
     }
     delete[] winningCoords;
 
@@ -70,7 +70,7 @@ int Medium::makeAMove(Board *game) {
         game->placePiece(winningCoords[0], winningCoords[1], this->playerType);
         game->displayBoard();
         delete[] winningCoords;
-        return 0;
+        return ;
     }
     delete[] winningCoords;
 

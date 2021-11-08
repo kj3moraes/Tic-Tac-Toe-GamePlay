@@ -33,7 +33,7 @@ class Medium final: public Engine {
     public:
         Medium(char playerType = 'X');
         ~Medium();
-        int makeAMove(Board *game) override;
+        void makeAMove(Board *game) override;
 };
 
 #endif

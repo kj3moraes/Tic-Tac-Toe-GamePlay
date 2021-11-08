@@ -3,12 +3,19 @@ CXXFLAGS = -std=c++14 -Wall
 EXEC = TicTacToeGame
 PROJ_DIR = src
 OBJ_DIR = build
+LIBS=-lm
 
-${EXEC}: ${OBJ_DIR}/m_${EXEC}.o ${OBJ_DIR}/f_${EXEC}.o
-	${CXX} ${CXXFLAGS} -o $@ $^
+_DEPS = hellomake.h
+DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
-${OBJ_DIR}/%.o : ${PROJ_DIR}/%.c
-	${CXX} ${CXXFLAGS} -c $< ${INCL} -o $@
+_OBJ = main.o prettyprint.o 
+OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
+
+$(ODIR)/%.o: %.c $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS)
+
+${EXEC}: $(OBJ)
+	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
 
 .PHONY: clean
 clean:
