@@ -32,22 +32,63 @@ class Board {
 
     public:
         Board(int noRows = 3, int noCols = 3, char x = 'X', char o = 'O', char blank = ' ');
-
-        template <size_t rows, size_t cols>
-        Board(char configuration[rows][cols]);
         ~Board();
 
-        int getNO_OF_ROWS();
-        int getNO_OF_COLUMNS();
-        int getX();
-        int getO();
+        int getNO_OF_ROWS() const;
+        int getNO_OF_COLUMNS() const;
+        char getX() const;
+        char getO() const;
 
+        /**
+         * @brief 
+         * 
+         * @param row 
+         * @param col 
+         * @return true 
+         * @return false 
+         */
         bool isTileMarked(int row, int col);
-        char getPiece(int row, int col);
-        bool isBoardFull();
+
+        /**
+         * @brief Get the Piece object
+         * 
+         * @param row 
+         * @param col 
+         * @return char 
+         */
+        char getPiece(int row, int col) const;
+
+        /**
+         * @brief 
+         * 
+         * @return true 
+         * @return false 
+         */
+        bool isBoardFul() const;
+
+        /**
+         * @brief 
+         * 
+         * @param row 
+         * @param col 
+         * @param playerType 
+         * @return true 
+         * @return false 
+         */
         bool placePiece(int row, int col, char playerType);
+
+        /**
+         * @brief 
+         * 
+         * @param row 
+         * @param col 
+         */
         void removePiece(int row, int col);
-        void displayBoard();
-        
+
+        /**
+         * @brief 
+         * 
+         */
+        void displayBoard() const ;
 };
 #endif
