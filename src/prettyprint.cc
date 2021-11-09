@@ -95,6 +95,15 @@ void PrettyPrint::printSelectedGameInfo() {
         "\t1. Human\n\t2. Easy\n\t3. Medium\n\t4. Hard" << endl;
 }
 
+void PrettyPrint::printDifficultyOptions() {
+    cout << "\nThe options for a game are :" << endl;
+    cout << "\t1. " << bold << "H" << unbold << "uman" << endl;
+    cout << "\t2. " << bold << "E" << unbold << "asy" << endl;
+    cout << "\t3. " << bold << "M" << unbold << "edium" << endl;
+    cout << "\t4. " << "H" << bold << "a" << unbold << "rd" << endl;
+    cout << "\nEnter either the nuumbered options or the character option in the command prompt below for BOTH player 1 and 2" << endl;
+ }
+
 std::ostream& bold(std::ostream& os) {
     return os << "\e[1m";
 }

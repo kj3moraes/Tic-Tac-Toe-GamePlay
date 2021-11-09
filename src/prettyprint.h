@@ -71,6 +71,12 @@ class PrettyPrint final {
          * 
          */
         static void printRedistributionConditions();
+
+        /**
+         * @brief 
+         * 
+         */
+        static void printDifficultyOptions();
 };
 
 std::ostream& bold(std::ostream& os);
