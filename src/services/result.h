@@ -22,11 +22,20 @@
 #ifndef RESULT_H
 #define RESULT_H
 #include "board.h"
-
+#include "opponents/player.h"
+#include <iostream>
+class Player;
 class Board;
 class Result final {
     public:
-        static bool isWinner(Board *game, char playerType);
-        
+        /**
+         * @brief 
+         * 
+         * @param game 
+         * @param piece 
+         * @return true 
+         * @return false 
+         */
+        static bool isWinner(const Board *game, char piece);
 };
 #endif

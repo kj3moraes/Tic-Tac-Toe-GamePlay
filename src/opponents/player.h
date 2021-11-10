@@ -28,8 +28,7 @@ class Player {
         char playerType;
         
     public:
-        Player(char playerType = 'H');
-        ~Player();
+        char getPlayerType() const;
 
         /**
          * @brief 

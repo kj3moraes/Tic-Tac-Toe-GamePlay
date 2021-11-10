@@ -1,7 +1,5 @@
 #include "player.h"
 
-Player::Player(char playerType) {
-    this->playerType = playerType;
+char Player::getPlayerType() const {
+    return playerType;
 }
-
-Player::~Player() {}
