@@ -21,7 +21,7 @@
  */
 #ifndef BOARDGAME_H
 #define BOARDGAME_H
-
+#include <iostream>
 class Board {
     char X;
     char O;
@@ -75,7 +75,7 @@ class Board {
          * @return true 
          * @return false 
          */
-        bool placePiece(int row, int col, char playerType);
+        bool placePiece(int row, int col, char piece);
 
         /**
          * @brief 

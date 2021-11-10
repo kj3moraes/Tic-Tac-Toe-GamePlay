@@ -32,25 +32,53 @@ char Board::getO() const {
 }
 
 bool Board::isTileMarked(int row, int col) {
-
+    return (board[row - 1][col - 1] != BLANK);
 }
 
 char Board::getPiece(int row, int col) const {
-
+    return board[row - 1][col - 1];
 }
 
 bool Board::isBoardFull() const {
-
+    for (int i = 0; i < NO_OF_ROWS; i++) {
+        for (int j = 0; j < NO_OF_COLUMNS; j++) {
+            if (board[i][j] == BLANK) {
+                return false;
+            }
+        }
+    }
+    return true;
 }
 
-bool Board::placePiece(int row, int column, char playerType) {
-
+bool Board::placePiece(int row, int column, char piece) {
+    if (board[row - 1][column - 1] != BLANK) {
+        return false;
+    }
+    board[row - 1][column - 1] = piece;
+    return true;
 }
 
 void Board::removePiece(int row, int col) {
+    board[row - 1][col - 1] = BLANK;
+}
 
+void printHeader(int length) {
+    std::cout << "+";
+    for (int i = 0; i < length; i++) {
+        std::cout << "-"; 
+    }   
+    std::cout << "+" << std::endl;
 }
 
 void Board::displayBoard() const {
-
+    printHeader(NO_OF_ROWS);
+    for (int i = 0; i < NO_OF_ROWS; i++) {
+        std::cout << "|";
+        for (int j =0; j < NO_OF_COLUMNS; j++) {
+            std::cout << getPiece(i + 1, j + 1);
+        }
+        std::cout << "|";
+    }
+    
+    printHeader(NO_OF_ROWS);
 }
