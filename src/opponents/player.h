@@ -1,8 +1,7 @@
 /**
  * @file player.h
  * @author Keane Moraes (keanejonathan3@gmail.com)
- * @brief The main program that allows the user to interact with 
- * the program and play the game.
+ * @brief 
  *
     Copyright (C) 2021 Keane Moraes
 
@@ -31,6 +30,12 @@ class Player {
     public:
         Player(char playerType = 'H');
         ~Player();
+
+        /**
+         * @brief 
+         * 
+         * @param game 
+         */
         virtual void makeAMove(Board *game) = 0;
 };
 #endif

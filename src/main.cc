@@ -106,6 +106,7 @@ int main(int argc, char *argv[]) {
 
     cin >> playerDiff1;
     cin >> playerDiff2;
-    
+    cout << playerDiff1;
+    cout << playerDiff2;
 }
 

@@ -64,7 +64,7 @@ class Board {
          * @return true 
          * @return false 
          */
-        bool isBoardFul() const;
+        bool isBoardFull() const;
 
         /**
          * @brief 

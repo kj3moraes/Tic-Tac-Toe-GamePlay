@@ -21,8 +21,8 @@
  */
 #include "easy.h"
 
-Easy::Easy() {
-    playerType = 'E';
+Easy::Easy(char playerType) {
+    this->playerType = playerType;
 }
 
 void Easy::makeAMove(Board *game) {

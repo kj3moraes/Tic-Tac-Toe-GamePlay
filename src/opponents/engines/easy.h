@@ -1,8 +1,7 @@
 /**
  * @file easy.h
  * @author Keane Moraes (keanejonathan3@gmail.com)
- * @brief The main program that allows the user to interact with 
- * the program and play the game.
+ * @brief 
  *
     Copyright (C) 2021 Keane Moraes
 

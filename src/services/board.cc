@@ -31,7 +31,26 @@ char Board::getO() const {
     return X;
 }
 
+bool Board::isTileMarked(int row, int col) {
 
+}
 
+char Board::getPiece(int row, int col) const {
 
+}
 
+bool Board::isBoardFull() const {
+
+}
+
+bool Board::placePiece(int row, int column, char playerType) {
+
+}
+
+void Board::removePiece(int row, int col) {
+
+}
+
+void Board::displayBoard() const {
+
+}

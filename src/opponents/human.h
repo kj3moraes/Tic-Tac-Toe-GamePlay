@@ -1,7 +1,7 @@
 #ifndef HUMAN_H
 #define HUMAN_H
 #include "player.h"
-#include "board.h"
+#include "../services/board.h"
 #include <string>
 #include <iostream>
 class Board;
