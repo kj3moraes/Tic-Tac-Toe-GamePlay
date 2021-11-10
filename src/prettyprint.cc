@@ -1,7 +1,8 @@
 /**
  * @file prettyprint.cc
  * @author Keane Moraes (keanejonathan3@gmail.com)
- * @brief Implementation of the prettyprint.h file.
+ * @brief Implementation of class for printing information with
+ * necessary formatting
  *
     Copyright (C) 2021 Keane Moraes
 
@@ -28,6 +29,8 @@ void PrettyPrint::provideHelp() {
     cout << bold << "\nstart <player1_type> <player2_type>: \n\tstart: " << unbold << "Begins the game\n\t"
             << bold << "<player1_type>: " << unbold << "Specifies the difficulty of the P1 (user: Human, easy: Easy Engine, medium: Medium Engine, hard:Hard Engine)\n\t"
             << bold << "<player1_type>: " << unbold << "Specifies the difficulty of the P2 (user: Human, easy: Easy Engine, medium: Medium Engine, hard:Hard Engine)" << endl;
+    
+    cout << bold << "<player_type>: " << "The player_type can be one of 4 choices. The option menu prints this out.";
     cout << bold << "\ncond: " << unbold << "Prints the conditions for redistributing the source \n\tcode under the GNU GPLv3 License" << endl; 
     cout << bold << "\nwarr: " << unbold << "Prints the warranty information under the GNU GPLv3 License" << endl; 
 }
@@ -66,7 +69,8 @@ void PrettyPrint::printHeader() {
 void PrettyPrint::printLicense() {
     cout << bold << "\nTicTacToeGame Copyright (C) 2021 Keane Moraes" << unbold << endl;
     cout << "This program comes with ABSOLUTELY NO WARRANTY; for details type `warr'." << endl;
-    cout << "This is free software, and you are welcome to redistribute it under certain conditions;\ntype `cond' for details." << endl;
+    cout << "This is free software, and you are welcome to redistribute it under certain\n"
+    "conditions;type `cond' for details." << endl;
 }
 
 void PrettyPrint::printWarranty() {
@@ -81,11 +85,12 @@ void PrettyPrint::printWarranty() {
         }
 
 void PrettyPrint::printRedistributionConditions() {
-    cout << "\nRefer to the page on GNU GPLv3 at <https://www.gnu.org/licenses/>" << endl;
+    cout << "\nRefer to this page  <https://www.gnu.org/licenses/gpl-3.0.txt> for information\n"
+        " on the distribution conditions under the GNU GPLv3" << endl;
 }
 
 void PrettyPrint::printVersion() {
-    cout << "TicTacToeGame: v1.0.1" << endl;
+    cout << "TicTacToeGame: v1.2.1" << endl;
 }
 
 void PrettyPrint::printSelectedGameInfo() {
@@ -95,13 +100,14 @@ void PrettyPrint::printSelectedGameInfo() {
         "\t1. Human\n\t2. Easy\n\t3. Medium\n\t4. Hard" << endl;
 }
 
-void PrettyPrint::printDifficultyOptions() {
+void PrettyPrint::printOptions() {
     cout << "\nThe options for a game are :" << endl;
     cout << "\t1. " << bold << "H" << unbold << "uman" << endl;
     cout << "\t2. " << bold << "E" << unbold << "asy" << endl;
     cout << "\t3. " << bold << "M" << unbold << "edium" << endl;
     cout << "\t4. " << "H" << bold << "a" << unbold << "rd" << endl;
-    cout << "\nEnter either the nuumbered options or the character option in the command prompt below for BOTH player 1 and 2" << endl;
+    cout << "\nEnter the either the numbered options or the character options\n"
+        "for starting in the prompt below for BOTH player 1 and 2" << endl;
  }
 
 std::ostream& bold(std::ostream& os) {

@@ -67,24 +67,28 @@ void determinePlayerDifficulty(Player *p, char playerType, char difficultySelect
         case '1':
         case 'H':
         case 'h':
+            cout << "Human player" << endl;
             p = new Human(playerType);
             break;
 
         case '2':
         case 'E':
         case 'e':
+            cout << "Easy engine" << endl;
             p = new Easy(playerType);
             break;
 
         case '3':
         case 'M':
         case 'm':
+            cout << "Medium engine" << endl;
             p = new Medium(playerType);
             break;
 
         case '4':
         case 'A':
         case 'a':
+            cout << "Hard engine" << endl;
             p = new Hard(playerType);
             break;
     }
@@ -101,12 +105,39 @@ int main(int argc, char *argv[]) {
 
     string command;
     char playerDiff1, playerDiff2;
-    PrettyPrint::printDifficultyOptions();
+    Player *p1 = nullptr, *p2 = nullptr;
+    Board *playground = new Board(3,3, 'X', 'O', ' ');
+
+    PrettyPrint::printOptions();
+    cout << ">> ";
     cin >> command;
 
-    cin >> playerDiff1;
-    cin >> playerDiff2;
-    cout << playerDiff1;
-    cout << playerDiff2;
+    while (command != "exit") {
+        if (command == "help") {
+            PrettyPrint::provideHelp();
+        } else if (command == "warr") {
+            PrettyPrint::printWarranty();
+        } else if (command == "cond") {
+            PrettyPrint::printRedistributionConditions();
+            cout << endl;
+        } else {
+            
+            // ASSIGN PLAYER DIFFICULTIES
+            cin >> playerDiff1;
+            cin >> playerDiff2;
+            
+            cout << "\nPlayer 1 will be the ";
+            determinePlayerDifficulty(p1, playground->getX(), playerDiff1);
+            cout << "Player 2 will be the ";
+            determinePlayerDifficulty(p2, playground->getO(), playerDiff2);
+
+            // 
+        }
+        cout << ">> ";
+        cin >> command;
+    }
+    cout << "Thank you for playing the game" << endl;
+    p1 != nullptr ? delete p1 : cout << endl;
+    p2 != nullptr ? delete p2 : cout << endl;
 }
 

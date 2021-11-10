@@ -1,7 +1,7 @@
 /**
  * @file easy.cc
  * @author Keane Moraes (keanejonathan3@gmail.com)
- * @brief ds
+ * @brief Implementation for the Easy engine.
  *
     Copyright (C) 2021 Keane Moraes
 
@@ -24,6 +24,8 @@
 Easy::Easy(char playerType) {
     this->playerType = playerType;
 }
+
+Easy::~Easy() {}
 
 void Easy::makeAMove(Board *game) {
     std::cout << "\nThe easy engine is making its move..." << std::endl;

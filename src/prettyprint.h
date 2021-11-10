@@ -75,7 +75,7 @@ class PrettyPrint final {
          * @brief 
          * 
          */
-        static void printDifficultyOptions();
+        static void printOptions();
 };
 
 std::ostream& bold(std::ostream& os);

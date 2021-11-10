@@ -13,7 +13,7 @@ Board::Board(int noOfRows, int noOfCols, char X, char O, char blank) {
     }
 }
 
-Board::~Board() { delete board; }
+Board::~Board() { }
 
 int Board::getNO_OF_ROWS() const {
     return NO_OF_ROWS;
