@@ -27,7 +27,7 @@ class Board;
 
 class Hard final: public Engine {
     public:
-        Hard();
+        Hard(char playerType);
         ~Hard();
         void makeAMove(Board *game) override;
 };

@@ -15,12 +15,23 @@ Board::Board(int noOfRows, int noOfCols, char X, char O, char blank) {
 
 Board::~Board() { delete board; }
 
-int Board::getNO_OF_ROWS() {
+int Board::getNO_OF_ROWS() const {
     return NO_OF_ROWS;
 }
 
-int Board::getNO_OF_COLUMNS() {
+int Board::getNO_OF_COLUMNS() const {
     return NO_OF_COLUMNS;
 }
+
+char Board::getX() const {
+    return X;
+}
+
+char Board::getO() const {
+    return X;
+}
+
+
+
 
 

@@ -19,8 +19,8 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  * 
  */
-#ifndef BOARD_H
-#define BOARD_H
+#ifndef BOARDGAME_H
+#define BOARDGAME_H
 
 class Board {
     char X;

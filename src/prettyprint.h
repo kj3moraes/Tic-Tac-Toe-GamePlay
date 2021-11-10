@@ -28,7 +28,6 @@
 
 class PrettyPrint final {
     public:
-
         /**
          * @brief Function prints multiple useful commands
          * and their correct usage that the user may need

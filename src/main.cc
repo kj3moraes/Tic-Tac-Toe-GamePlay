@@ -33,6 +33,12 @@
 #include "services/result.h"
 using namespace std;
 
+/**
+ * @brief 
+ * 
+ * @param argc 
+ * @param argv 
+ */
 void handleCommandLineArgs(int &argc, char *argv[]) {
     string command = (string)(argv[1]);
     if (command == "--info" || command == "-i") {
@@ -49,6 +55,41 @@ void handleCommandLineArgs(int &argc, char *argv[]) {
     }
 }
 
+/**
+ * @brief 
+ * 
+ * @param argc 
+ * @param argv 
+ * @return int 
+ */
+void determinePlayerDifficulty(Player *p, char playerType, char difficultySelection) {
+    switch (difficultySelection) {
+        case '1':
+        case 'H':
+        case 'h':
+            p = new Human(playerType);
+            break;
+
+        case '2':
+        case 'E':
+        case 'e':
+            p = new Easy(playerType);
+            break;
+
+        case '3':
+        case 'M':
+        case 'm':
+            p = new Medium(playerType);
+            break;
+
+        case '4':
+        case 'A':
+        case 'a':
+            p = new Hard(playerType);
+            break;
+    }
+}
+
 int main(int argc, char *argv[]) {
     if (argc > 1) {
         handleCommandLineArgs(argc, argv);
@@ -57,5 +98,14 @@ int main(int argc, char *argv[]) {
     
     PrettyPrint::printHeader();
     PrettyPrint::printLicense();
+
+    string command;
+    char playerDiff1, playerDiff2;
+    PrettyPrint::printDifficultyOptions();
+    cin >> command;
+
+    cin >> playerDiff1;
+    cin >> playerDiff2;
+    
 }
 
