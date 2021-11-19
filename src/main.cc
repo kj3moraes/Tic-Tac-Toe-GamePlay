@@ -121,6 +121,16 @@ int main(int argc, char *argv[]) {
         } else if (command == "cond") {
             PrettyPrint::printRedistributionConditions();
             cout << endl;
+        } else if (command == "set") {
+            char input;
+            cin >> input;
+
+            cin >> input;
+            playground->setX(input);
+            cin >> input;
+            playground->setO(input);
+            cin >> input;
+            playground->setBLANK(input);
         } else {
             
             // ASSIGN PLAYER DIFFICULTIES
