@@ -22,6 +22,7 @@
  */
 #include <iostream>
 #include <string>
+#include <memory>
 #include "prettyprint.h"
 #include "opponents/player.h"
 #include "opponents/human.h"
@@ -137,7 +138,6 @@ int main(int argc, char *argv[]) {
         cin >> command;
     }
     cout << "Thank you for playing the game" << endl;
-    p1 != nullptr ? delete p1 : cout << endl;
-    p2 != nullptr ? delete p2 : cout << endl;
+    delete playground;
 }
 

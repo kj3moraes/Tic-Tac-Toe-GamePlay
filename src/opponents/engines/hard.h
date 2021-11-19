@@ -25,10 +25,20 @@
 #define HARD_H
 class Board;
 
-class Hard final: public Engine {
+class Hard final : public Engine {
+    static const int NEGATIVE_SCORE =  -10;
+    static const int POSITIVE_SCORE = 10;
+    static const int NEUTRAL_SCORE = 0;
+    static const int MAX_DEPTH = 6;
+
+    int miniMax(Board *game, int depth, bool isMax);
+    int evaluateBoard(Board *game);
+    
     public:
         Hard(char playerType);
         ~Hard();
+
+
         void makeAMove(Board *game) override;
 };
 
