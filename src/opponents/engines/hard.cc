@@ -21,12 +21,87 @@
  */
 #include "hard.h"
 
+// USEFUL CONSTANTS FOR MINIMAX
+static const int NEGATIVE_SCORE =  -10;
+static const int POSITIVE_SCORE = 10;
+static const int NEUTRAL_SCORE = 0;
+static const int MAX_DEPTH = 6;
+
+
 Hard::Hard(char playerType) {
     this->playerType = playerType;
 }
+
+
 Hard::~Hard() {}
+
+
+int Hard::evaluateBoard(Board *game) {
+    bool isXWin = Result::isWinner(game, game->getX());
+    bool isOWin = Result::isWinner(game, game->getO());
+
+    if (this->playerType == game->getX()) {
+        if (isXWin && !isOWin) {
+            return  POSITIVE_SCORE;
+        } else if (isOWin && !isXWin) {
+            return NEGATIVE_SCORE;
+        } else {
+            return NEUTRAL_SCORE;
+        }
+    } else {
+        if (isXWin && !isOWin) {
+            return  NEGATIVE_SCORE;
+        } else if (isOWin && !isXWin) {
+            return POSITIVE_SCORE;
+        }
+    }
+    return NEUTRAL_SCORE;
+}
+
+
+int Hard::miniMax(Board *game, int depth, bool isMax) {
+    int currentBoardValue = evaluateBoard(game);
+
+    if (abs(currentBoardValue) == POSITIVE_SCORE || depth == 0 || game->isBoardFull()) {
+        return currentBoardValue;
+    }
+
+    if (isMax) {
+        int highestVal = INT32_MIN;
+        for (int row = 1; row <= game->getNO_OF_ROWS(); row++) {
+            for (int col = 1; col <= game->getNO_OF_COLUMNS(); col++) {
+                if (!game->isTileMarked(row, col)) {
+                    game->placePiece(row, col, this->getPlayerType());
+                    highestVal = fmax(highestVal, miniMax(game, depth-1, false));
+                    game->removePiece(row, col);
+                }
+            }
+        }
+        return highestVal;
+    }
+}
+
 
 void Hard::makeAMove(Board *game) {
     std::cout << "\nThe Hard engine is making its move..." << std::endl;
-    placePieceRandomly(game);
+    int bestMove[]{0,0};
+    int bestMoveValue = INT32_MAX;
+
+    for (int i = 1; i <= game->getNO_OF_ROWS(); i++) {
+        for (int j = 1; j <= game->getNO_OF_COLUMNS(); j++) {
+            if (!game->isTileMarked(i, j)) {
+                game->placePiece(i, j, this->playerType);
+                int moveValue = miniMax(game, MAX_DEPTH, false);
+                game->removePiece(i, j);
+                if (moveValue > bestMoveValue) {
+                    bestMove[0] = i;
+                    bestMove[1] = j;
+                    bestMoveValue = moveValue;
+                }
+            }
+        }
+    }
+
+    game->placePiece(bestMove[0], bestMove[1], this->playerType);
+    game->displayBoard();
 }

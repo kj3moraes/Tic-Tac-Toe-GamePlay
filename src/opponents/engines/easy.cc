@@ -25,7 +25,7 @@ Easy::Easy(char playerType) {
     this->playerType = playerType;
 }
 
-Easy::~Easy() {}
+Easy::~Easy() {}    
 
 void Easy::makeAMove(Board *game) {
     std::cout << "\nThe easy engine is making its move..." << std::endl;

@@ -35,10 +35,10 @@
 using namespace std;
 
 /**
- * @brief 
- * 
- * @param argc 
- * @param argv 
+ * @brief Takes in the command line arguments and provides
+ * the user with information on the game and other aspects
+ * @param argc number of arguments
+ * @param argv string array of arguments
  */
 void handleCommandLineArgs(int &argc, char *argv[]) {
     string command = (string)(argv[1]);

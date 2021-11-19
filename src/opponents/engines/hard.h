@@ -19,26 +19,39 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  * 
  */
-#include "engine.h"
-#include "../../services/board.h"
+
 #ifndef HARD_H
 #define HARD_H
+#include <cmath>
+#include "engine.h"
+#include "../../services/board.h"
+#include "../../services/result.h"
 class Board;
 
 class Hard final : public Engine {
-    static const int NEGATIVE_SCORE =  -10;
-    static const int POSITIVE_SCORE = 10;
-    static const int NEUTRAL_SCORE = 0;
-    static const int MAX_DEPTH = 6;
-
+    
+    /**
+     * @brief 
+     * 
+     * @param game 
+     * @param depth 
+     * @param isMax 
+     * @return int 
+     */
     int miniMax(Board *game, int depth, bool isMax);
+
+    /**
+     * @brief 
+     * 
+     * @param game 
+     * @return int 
+     */
     int evaluateBoard(Board *game);
     
     public:
         Hard(char playerType);
         ~Hard();
-
-
+        
         void makeAMove(Board *game) override;
 };
 

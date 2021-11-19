@@ -25,6 +25,8 @@ class Board;
 
 class Player {
     protected:
+
+        // Represents whether the player plays 'X' or 'O'
         char playerType;
         
     public:
@@ -34,8 +36,8 @@ class Player {
         char getPlayerType() const;
 
         /**
-         * @brief 
-         * 
+         * @brief Allows the player to make a move on the 
+         * given board game. 
          * @param game 
          */
         virtual void makeAMove(Board *game) = 0;

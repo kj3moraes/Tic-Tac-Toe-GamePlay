@@ -10,6 +10,7 @@ ${EXEC}: ${OBJ}
 	${CXX ${CXXFLAGS} ${OBJ} -o ${EXEC}
 
 main.o : ${PROJ_DIR}/main.cc
+	@echo "Building the final executable"
 	${CXX} ${CXXFLAGS} -c main.cc -o main.o
 
 engines.o : ${ENGINE_DIR}/player.cc ${ENGINE_DIR}/player.cc ${ENGINE_DIR}/human.cc ${ENGINE_DIR}/easy.cc ${ENGINE_DIR}/medium.cc ${ENGINE_DIR}/hard.cc

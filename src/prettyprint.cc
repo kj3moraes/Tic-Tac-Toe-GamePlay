@@ -30,7 +30,7 @@ void PrettyPrint::provideHelp() {
             << bold << "<player1_type>: " << unbold << "Specifies the difficulty of the P1 (user: Human, easy: Easy Engine, medium: Medium Engine, hard:Hard Engine)\n\t"
             << bold << "<player1_type>: " << unbold << "Specifies the difficulty of the P2 (user: Human, easy: Easy Engine, medium: Medium Engine, hard:Hard Engine)" << endl;
     
-    cout << bold << "<player_type>: " << "The player_type can be one of 4 choices. The option menu prints this out.";
+    cout << bold << "\n<player_type>: " << "The player_type can be one of 4 choices. The option menu prints this out." << endl;
     cout << bold << "\ncond: " << unbold << "Prints the conditions for redistributing the source \n\tcode under the GNU GPLv3 License" << endl; 
     cout << bold << "\nwarr: " << unbold << "Prints the warranty information under the GNU GPLv3 License" << endl; 
 }
@@ -86,7 +86,7 @@ void PrettyPrint::printWarranty() {
 
 void PrettyPrint::printRedistributionConditions() {
     cout << "\nRefer to this page  <https://www.gnu.org/licenses/gpl-3.0.txt> for information\n"
-        " on the distribution conditions under the GNU GPLv3" << endl;
+        "on the distribution conditions under the GNU GPLv3" << endl;
 }
 
 void PrettyPrint::printVersion() {
