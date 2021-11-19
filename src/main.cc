@@ -21,8 +21,10 @@
  * 
  */
 #include <iostream>
+#include <iomanip>
 #include <string>
 #include <memory>
+#include <sstream>
 #include "prettyprint.h"
 #include "opponents/player.h"
 #include "opponents/human.h"
@@ -111,9 +113,9 @@ int main(int argc, char *argv[]) {
 
     PrettyPrint::printOptions();
     cout << ">> ";
-    cin >> command;
+    getline(cin, command);
 
-    while (command != "exit") {
+    while (command != "exit" && command != "quit") {
         if (command == "help") {
             PrettyPrint::provideHelp();
         } else if (command == "warr") {
@@ -121,16 +123,19 @@ int main(int argc, char *argv[]) {
         } else if (command == "cond") {
             PrettyPrint::printRedistributionConditions();
             cout << endl;
-        } else if (command == "set") {
+        } else if (command.substr(0,3) == "set") {
             char input;
-            cin >> input;
-
-            cin >> input;
+            istringstream s{command.substr(4)};
+            
+            s >> input;
             playground->setX(input);
-            cin >> input;
+            cout << "User has redefined X as " << input << endl;
+            s >> input;
             playground->setO(input);
-            cin >> input;
+            cout << "User has redefined O as " << input << endl;
+            s >> input;
             playground->setBLANK(input);
+            cout << "User has redefined BLANK as " << input << endl;
         } else {
             
             // ASSIGN PLAYER DIFFICULTIES
@@ -141,10 +146,8 @@ int main(int argc, char *argv[]) {
             determinePlayerDifficulty(p1, playground->getX(), playerDiff1);
             cout << "Player 2 will be the ";
             determinePlayerDifficulty(p2, playground->getO(), playerDiff2);
-
-            // 
         }
-        cout << ">> ";
+        cout << "\n>> ";
         cin >> command;
     }
     cout << "Thank you for playing the game" << endl;

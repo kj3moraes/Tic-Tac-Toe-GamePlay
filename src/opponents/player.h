@@ -30,7 +30,6 @@ class Player {
         char playerType;
         
     public:
-        Player(char playerType = 'X');
         virtual ~Player();
         
         char getPlayerType() const;

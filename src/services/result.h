@@ -22,7 +22,6 @@
 #ifndef RESULT_H
 #define RESULT_H
 #include "board.h"
-#include "../opponents/player.h"
 #include <iostream>
 class Player;
 class Board;

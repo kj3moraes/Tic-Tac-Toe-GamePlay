@@ -7,8 +7,16 @@
 class Board;
 class Human: public Player {
 
+    /**
+     * @brief 
+     * 
+     * @param row 
+     * @param col 
+     * @return true 
+     * @return false 
+     */
     bool acceptCoordinates(int &row, int &col);
-
+    
     public:
         Human(char playerType = 'H');
         ~Human();
