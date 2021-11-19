@@ -15,6 +15,18 @@ Board::Board(int noOfRows, int noOfCols, char X, char O, char blank) {
 
 Board::~Board() { }
 
+void Board::setX(char X) {
+    this->X = X;
+}
+
+void Board::setO(char O) {
+    this->O = O;
+}
+
+void Board::setBLANK(char BLANK) {
+    this->BLANK = BLANK;
+}
+
 int Board::getNO_OF_ROWS() const {
     return NO_OF_ROWS;
 }

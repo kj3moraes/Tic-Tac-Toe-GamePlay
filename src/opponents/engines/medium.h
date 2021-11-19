@@ -1,7 +1,7 @@
 /**
  * @file medium.h
  * @author Keane Moraes (keanejonathan3@gmail.com)
- * @brief 
+ * @brief Header file for the Medium engine.
  *
     Copyright (C) 2021 Keane Moraes
 
@@ -28,6 +28,15 @@
 class Board;
 
 class Medium final: public Engine {
+
+    /**
+     * @brief Finds a winning move whehter along a column,
+     * row or diagonal. Returns a int pointer to the array storing
+     * this winning move. Returns nullptr if none-exists
+     * @param game game to determine winning move.
+     * @param playerType - either an 'X' or 'O'
+     * @return int* - array contaning winning move. nullptr if none exists
+     */
     int* findWinningMove(Board *game, char playerType);
 
     public:

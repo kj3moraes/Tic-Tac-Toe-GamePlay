@@ -21,17 +21,9 @@
  */
 #include "hard.h"
 
-// USEFUL CONSTANTS FOR MINIMAX
-static const int NEGATIVE_SCORE =  -10;
-static const int POSITIVE_SCORE = 10;
-static const int NEUTRAL_SCORE = 0;
-static const int MAX_DEPTH = 6;
-
-
 Hard::Hard(char playerType) {
     this->playerType = playerType;
 }
-
 
 Hard::~Hard() {}
 
@@ -42,7 +34,7 @@ int Hard::evaluateBoard(Board *game) {
 
     if (this->playerType == game->getX()) {
         if (isXWin && !isOWin) {
-            return  POSITIVE_SCORE;
+            return POSITIVE_SCORE;
         } else if (isOWin && !isXWin) {
             return NEGATIVE_SCORE;
         } else {

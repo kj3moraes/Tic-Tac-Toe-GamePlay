@@ -34,33 +34,37 @@ class Board {
         Board(int noRows = 3, int noCols = 3, char x = 'X', char o = 'O', char blank = ' ');
         ~Board();
 
+        void setX(char X);
+        void setO(char O);
+        void setBLANK(char BLANK);
+
         int getNO_OF_ROWS() const;
         int getNO_OF_COLUMNS() const;
         char getX() const;
         char getO() const;
 
         /**
-         * @brief 
-         * 
-         * @param row 
-         * @param col 
-         * @return true 
-         * @return false 
+         * @brief Determines if the specified row and column
+         * have a piece present
+         * @param row row number
+         * @param col column number
+         * @return true - a piece is present
+         * @return false - no piece is present
          */
         bool isTileMarked(int row, int col);
 
         /**
-         * @brief Get the Piece object
-         * 
-         * @param row 
-         * @param col 
-         * @return char 
+         * @brief Get the piece present at the specified
+         * row and column. Can be a BLANK.
+         * @param row row number
+         * @param col column number
+         * @return char - one of X, O, BLANK
          */
         char getPiece(int row, int col) const;
 
         /**
-         * @brief 
-         * 
+         * @brief Determines if the board is full
+         * (i.e all the positions have a non-BLANK)
          * @return true 
          * @return false 
          */

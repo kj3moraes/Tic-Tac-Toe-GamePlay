@@ -25,7 +25,7 @@ using namespace std;
 void PrettyPrint::provideHelp() {
     cout << bold << "TicTacToe Game" << unbold << endl;
     cout << "This is a text-based game interface that allows the user to play against an assortment of engines (Easy, Medium, Hard) or another Human" << endl;
-    cout << "The game has a specific type of input that is discussed below. Please stick to it else you might get an error" << endl;
+    cout << "The game has a specific type of input that is discussed below. "<< RED << "Please stick to it else you might get an error" << RESET << endl;
     cout << bold << "\nstart <player1_type> <player2_type>: \n\tstart: " << unbold << "Begins the game\n\t"
             << bold << "<player1_type>: " << unbold << "Specifies the difficulty of the P1 (user: Human, easy: Easy Engine, medium: Medium Engine, hard:Hard Engine)\n\t"
             << bold << "<player1_type>: " << unbold << "Specifies the difficulty of the P2 (user: Human, easy: Easy Engine, medium: Medium Engine, hard:Hard Engine)" << endl;

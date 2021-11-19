@@ -1,7 +1,7 @@
 /**
  * @file hard.h
  * @author Keane Moraes (keanejonathan3@gmail.com)
- * @brief 
+ * @brief Header file for the Hard engine.
  *
     Copyright (C) 2021 Keane Moraes
 
@@ -30,6 +30,12 @@ class Board;
 
 class Hard final : public Engine {
     
+    // USEFUL CONSTANTS FOR MINIMAX
+    static const int NEGATIVE_SCORE =  -10;
+    static const int POSITIVE_SCORE = 10;
+    static const int NEUTRAL_SCORE = 0;
+    static const int MAX_DEPTH = 6;
+
     /**
      * @brief 
      * 
@@ -41,17 +47,18 @@ class Hard final : public Engine {
     int miniMax(Board *game, int depth, bool isMax);
 
     /**
-     * @brief 
-     * 
-     * @param game 
-     * @return int 
+     * @brief Evaluates if the board is in a winning position
+     * for the current player or the opponent or neither.
+     * Returns one of the above constants accordingly
+     * @param game Board to analyze. 
+     * @return int - one of POSITIVE_SCORE, NEGATIVE_SCORE or NEUTRAL_SCORE
      */
     int evaluateBoard(Board *game);
     
     public:
         Hard(char playerType);
         ~Hard();
-        
+
         void makeAMove(Board *game) override;
 };
 
