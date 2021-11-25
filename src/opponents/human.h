@@ -21,7 +21,7 @@ class Human: public Player {
         Human(char playerType = 'H');
         ~Human();
 
-        void makeAMove(Board *game) override;
+        void makeAMove(Board *&game) override;
 };
 
 #endif

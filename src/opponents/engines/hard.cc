@@ -1,7 +1,7 @@
 /**
  * @file hard.cc
  * @author Keane Moraes (keanejonathan3@gmail.com)
- * @brief Implementation for the Hard engine
+ * @brief Implementation of the Hard engine
  *
     Copyright (C) 2021 Keane Moraes
 
@@ -71,23 +71,23 @@ int Hard::miniMax(Board *game, int depth, bool isMax) {
         }
         return highestVal;
     } else {
-            char opponentPlayerType = this->playerType == game->getX() ? game->getO() : game->getX();
-            int lowestVal = INT32_MAX;
-            for (int row = 1; row <= game->getNO_OF_ROWS(); row++) {
-                for (int col = 1; col <= game->getNO_OF_COLUMNS(); col++) {
-                    if (!game->isTileMarked(row, col)) {
-                        game->placePiece(row, col, opponentPlayerType);
-                        lowestVal = fmin(lowestVal, miniMax(game, depth-1, true));
-                        game->removePiece(row, col);
-                    }
+        char opponentPlayerType = this->playerType == game->getX() ? game->getO() : game->getX();
+        int lowestVal = INT32_MAX;
+        for (int row = 1; row <= game->getNO_OF_ROWS(); row++) {
+            for (int col = 1; col <= game->getNO_OF_COLUMNS(); col++) {
+                if (!game->isTileMarked(row, col)) {
+                    game->placePiece(row, col, opponentPlayerType);
+                    lowestVal = fmin(lowestVal, miniMax(game, depth-1, true));
+                    game->removePiece(row, col);
                 }
             }
-            return lowestVal;
         }
+        return lowestVal;
+    }
 }
 
 
-void Hard::makeAMove(Board *game) {
+void Hard::makeAMove(Board *&game) {
     std::cout << "\nThe Hard engine is making its move..." << std::endl;
     int bestMove[]{0,0};
     int bestMoveValue = INT32_MAX;

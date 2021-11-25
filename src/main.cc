@@ -23,6 +23,7 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
+#include <sstream>
 #include <memory>
 #include <sstream>
 #include "prettyprint.h"
@@ -65,7 +66,7 @@ void handleCommandLineArgs(int &argc, char *argv[]) {
  * @param argv 
  * @return int 
  */
-void determinePlayerDifficulty(Player *p, char playerType, char difficultySelection) {
+void determinePlayerDifficulty(Player *&p, char playerType, char difficultySelection) {
     switch (difficultySelection) {
         case '1':
         case 'H':
@@ -106,7 +107,7 @@ int main(int argc, char *argv[]) {
     PrettyPrint::printHeader();
     PrettyPrint::printLicense();
 
-    string command;
+    string command, token;
     char playerDiff1, playerDiff2;
     Player *p1 = nullptr, *p2 = nullptr;
     Board *playground = new Board(3,3, 'X', 'O', ' ');
@@ -115,18 +116,22 @@ int main(int argc, char *argv[]) {
     cout << ">> ";
     getline(cin, command);
 
+    // INITAL GAME SETUP
     while (command != "exit" && command != "quit") {
-        if (command == "help") {
+        istringstream ss{command};
+        ss >> token;
+        if (token == "help") {
             PrettyPrint::provideHelp();
-        } else if (command == "warr") {
+        } else if (token == "warr") {
             PrettyPrint::printWarranty();
-        } else if (command == "cond") {
+        } else if (token == "cond") {
             PrettyPrint::printRedistributionConditions();
             cout << endl;
-        } else if (command.substr(0,3) == "set") {
+        } else if (token == "set") {
             char input;
             istringstream s{command.substr(4)};
             
+            // REDEFINING THE BOARD PIECES
             s >> input;
             playground->setX(input);
             cout << "User has redefined X as " << input << endl;
@@ -136,20 +141,45 @@ int main(int argc, char *argv[]) {
             s >> input;
             playground->setBLANK(input);
             cout << "User has redefined BLANK as " << input << endl;
+        } else if (command == "menu") {
+            PrettyPrint::printOptions();
         } else {
             
-            // ASSIGN PLAYER DIFFICULTIES
-            cin >> playerDiff1;
-            cin >> playerDiff2;
+            ss >> token;
+            playerDiff1 = token.at(0);
+            playerDiff2 = token.at(1);
             
             cout << "\nPlayer 1 will be the ";
             determinePlayerDifficulty(p1, playground->getX(), playerDiff1);
             cout << "Player 2 will be the ";
             determinePlayerDifficulty(p2, playground->getO(), playerDiff2);
+            break;
         }
         cout << "\n>> ";
-        cin >> command;
+        getline(cin, command);
     }
+
+    // GAME STARTS
+    bool isWin;
+    while (!playground->isBoardFull()) {
+        p1->makeAMove(playground);
+        playground->displayBoard();
+        isWin = Result::isWinner(playground, p1->getPlayerType());
+        if (isWin) {
+            cout << "P1 Wins" << endl;
+            break;
+        }
+
+        p2->makeAMove(playground);
+        playground->displayBoard();
+        isWin = Result::isWinner(playground, p2->getPlayerType());
+        if (isWin) {
+            cout << "P2 Wins" << endl;
+            break;
+        }
+    }
+    
+
     cout << "Thank you for playing the game" << endl;
     delete playground;
 }

@@ -89,7 +89,7 @@ void Board::displayBoard() const {
         for (int j =0; j < NO_OF_COLUMNS; j++) {
             std::cout << getPiece(i + 1, j + 1);
         }
-        std::cout << "|";
+        std::cout << "|" << std::endl;
     }
     
     printHeader(NO_OF_ROWS);

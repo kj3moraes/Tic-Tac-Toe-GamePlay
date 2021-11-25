@@ -28,7 +28,7 @@ Human::Human(char splayerType) {
 
 Human::~Human() {}
 
-void Human::makeAMove(Board *game) {
+void Human::makeAMove(Board *&game) {
     bool isMoveValid;
     int row, col;
     do {

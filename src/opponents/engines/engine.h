@@ -31,6 +31,6 @@ class Engine: public Player {
     
     protected:
         std::string ENGINE_NAME;
-        void placePieceRandomly(Board *game);    
+        void placePieceRandomly(Board *&game);    
 };
 #endif

@@ -20,7 +20,7 @@
  * 
  */
 #include "engine.h"
-
+#include <iostream>
 
 /**
  * @brief Generated a random 2-int array representing row and column
@@ -28,12 +28,20 @@
  * @return int* - the random array
  */
 int* Engine::generateRandomPosition() {
-    std::default_random_engine generator;
-    std::uniform_int_distribution<int> dist(1, 4);
+    // std::default_random_engine generator;
+    // std::uniform_int_distribution<int> dist(1, 4);
         
+    
+    std::random_device rd;     // only used once to initialise (seed) engine
+    std::mt19937 rng(rd());    // random-number engine used (Mersenne-Twister in this case)
+    std::uniform_int_distribution<int> uni(1, 4); // guaranteed unbiased
+
     int *randomCoords = new int[2];
-    randomCoords[0] = dist(generator);
-    randomCoords[1] = dist(generator);
+    randomCoords[0] = uni(rng);
+    randomCoords[1] = uni(rng);
+
+    std::cout << randomCoords[0] << std::endl;
+    std::cout << randomCoords[1] << std::endl;
     return randomCoords;
 }
 
@@ -41,8 +49,11 @@ int* Engine::generateRandomPosition() {
  * @brief 
  * 
  */
-void Engine::placePieceRandomly(Board *game) {
+void Engine::placePieceRandomly(Board *&game) {
     int *randomCoords = generateRandomPosition();
+    if (game->isTileMarked(randomCoords[0], randomCoords[1])) {
+        randomCoords = generateRandomPosition();
+    }
     game->placePiece(randomCoords[0], randomCoords[1], this->playerType);
     delete[] randomCoords;
 }
