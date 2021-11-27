@@ -1,8 +1,7 @@
 /**
  * @file board.h
  * @author Keane Moraes
- * @brief The header file for the Board object to manage all things
- * that occur on the TTT Board.
+ * @brief Header file for the Board class.
     Copyright (C) 2021 Keane Moraes
 
     This program is free software: you can redistribute it and/or modify
@@ -44,8 +43,8 @@ class Board {
         char getO() const;
 
         /**
-         * @brief 
-         * 
+         * @brief Resets the board by
+         * setting everything to BLANK.
          */
         void resetBoard();
 
