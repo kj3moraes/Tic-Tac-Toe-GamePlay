@@ -23,16 +23,25 @@
 using namespace std;
 
 void PrettyPrint::provideHelp() {
-    cout << bold << "TicTacToe Game" << reset << endl;
+    cout << bold << "\nTicTacToe Game" << reset << endl;
     cout << "This is a text-based game interface that allows the user to play against an assortment of engines (Easy, Medium, Hard) or another Human" << endl;
     cout << "The game has a specific type of input that is discussed below. "<< RED << "Please stick to it else you might get an error" << RESET << endl;
-    cout << bold << "\nstart <player1_type> <player2_type>: \n\tstart: " << reset << "Begins the game\n\t"
-            << bold << "<player1_type>: " << reset << "Specifies the difficulty of the P1 (user: Human, easy: Easy Engine, medium: Medium Engine, hard:Hard Engine)\n\t"
-            << bold << "<player1_type>: " << reset << "Specifies the difficulty of the P2 (user: Human, easy: Easy Engine, medium: Medium Engine, hard:Hard Engine)" << endl;
-    
-    cout << bold << "\n<player_type>: " << "The player_type can be one of 4 choices. The option menu prints this out." << endl;
-    cout << bold << "\ncond: " << reset << "Prints the conditions for redistributing the source \n\tcode under the GNU GPLv3 License" << endl; 
-    cout << bold << "\nwarr: " << reset << "Prints the warranty information under the GNU GPLv3 License" << endl; 
+    cout << "This software is licensed under the GNU GPLv3. A copy of it is found in the /src folder" << endl;
+    cout << bold << "\nCOMMAND LINE OPTIONS" << endl;
+    cout << bold << "\t --help" << reset << "  outputs this help information" << endl;
+    cout << bold << "\t --info" << reset << "  provides a brief overview of the game and what the objective is" << endl;
+    cout << bold << "\t --version" << reset << "  prints the version number of this executable" << endl;
+
+    cout << bold << "\nGAMEPLAY OPTIONS" << endl;
+    cout << bold << "\tstart <player1_type><player2_type>:" << reset << endl;
+    cout << bold << "\t\tstart: " << reset << "Begins the game\n"
+            << bold << "\t\t<player1_type>: " << reset << "Specifies the difficulty of the Player1 (user: Human, easy: Easy Engine, medium: Medium Engine, hard:Hard Engine)\n"
+            << bold << "\t\t<player1_type>: " << reset << "Specifies the difficulty of the Player2 (user: Human, easy: Easy Engine, medium: Medium Engine, hard:Hard Engine)" << endl;
+    cout << red << "\t\t" << "Remember there is no space between the <player1_type> and the <player2_type>, you must type them concatenated. Like 'he'" << reset << endl;
+    cout << bold << "\n\t<player_type>: " << "The player_type can be one of 4 choices. The option menu prints this out." << endl;
+    cout << bold << "\n\tmenu  "  << reset << "Prints the options of player difficulty that the user can choose from" << endl;
+    cout << bold << "\n\tcond  " << reset << "Prints the conditions for redistributing the source \n\tcode under the GNU GPLv3 License" << endl; 
+    cout << bold << "\n\twarr  " << reset << "Prints the warranty information under the GNU GPLv3 License" << endl; 
 }
 
 void PrettyPrint::printHeader() {
@@ -68,6 +77,7 @@ void PrettyPrint::printHeader() {
 
 void PrettyPrint::printLicense() {
     cout << bold << "\nTicTacToeGame Copyright (C) 2021 Keane Moraes" << reset << endl;
+    cout << "This sofware is licensed under the GNU GPLv3 License." << endl;
     cout << "This program comes with ABSOLUTELY NO WARRANTY; for details type `warr'." << endl;
     cout << "This is free software, and you are welcome to redistribute it under certain\n"
     "conditions;type `cond' for details." << endl;
@@ -90,7 +100,7 @@ void PrettyPrint::printRedistributionConditions() {
 }
 
 void PrettyPrint::printVersion() {
-    cout << "TicTacToeGame: v3.1.1" << endl;
+    cout << "TicTacToeGame: 4.0.0" << endl;
 }
 
 void PrettyPrint::printSelectedGameInfo() {

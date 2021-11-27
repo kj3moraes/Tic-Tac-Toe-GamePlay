@@ -52,8 +52,6 @@ void handleCommandLineArgs(int &argc, char *argv[]) {
         PrettyPrint::provideHelp();
     } else if (command == "--version" || command == "-v") {
         PrettyPrint::printVersion();
-    } else if (command == "") {
-        
     } else {
         cerr << "Invalid command line argument. Refer to README file" << endl;
     }

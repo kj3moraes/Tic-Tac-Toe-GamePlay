@@ -53,7 +53,7 @@ void Human::makeAMove(Board *&game) {
 
         if (game->isTileMarked(row, col)) {
             std::cout << red << "\nThere already is a piece at this position. Select another" << reset << std::endl;
-
+            isInputValid = false;
         }
     } while(!isInputValid);
     game->placePiece(row, col, this->playerType);

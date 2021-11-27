@@ -108,5 +108,4 @@ void Hard::makeAMove(Board *&game) {
     }
 
     game->placePiece(bestMove[0], bestMove[1], this->playerType);
-    game->displayBoard();
 }
