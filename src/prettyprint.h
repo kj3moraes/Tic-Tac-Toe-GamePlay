@@ -93,6 +93,15 @@ std::ostream& bold(std::ostream& os);
  * @param os 
  * @return std::ostream& 
  */
-std::ostream& unbold(std::ostream& os);
+std::ostream& red(std::ostream& os);
+
+/**
+ * @brief 
+ * 
+ * @param os 
+ * @return std::ostream& 
+ */
+std::ostream& reset(std::ostream& os);
+
 
 #endif

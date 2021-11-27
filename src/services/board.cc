@@ -40,7 +40,7 @@ char Board::getX() const {
 }
 
 char Board::getO() const {
-    return X;
+    return O;
 }
 
 bool Board::isTileMarked(int row, int col) {

@@ -28,7 +28,7 @@ Hard::Hard(char playerType) {
 Hard::~Hard() {}
 
 
-int Hard::evaluateBoard(Board *game) {
+int Hard::evaluateBoard(Board *&game) {
     bool isXWin = Result::isWinner(game, game->getX());
     bool isOWin = Result::isWinner(game, game->getO());
 
@@ -51,7 +51,7 @@ int Hard::evaluateBoard(Board *game) {
 }
 
 
-int Hard::miniMax(Board *game, int depth, bool isMax) {
+int Hard::miniMax(Board *&game, int depth, bool isMax) {
     int currentBoardValue = evaluateBoard(game);
 
     if (abs(currentBoardValue) == POSITIVE_SCORE || depth == 0 || game->isBoardFull()) {
@@ -90,7 +90,7 @@ int Hard::miniMax(Board *game, int depth, bool isMax) {
 void Hard::makeAMove(Board *&game) {
     std::cout << "\nThe Hard engine is making its move..." << std::endl;
     int bestMove[]{0,0};
-    int bestMoveValue = INT32_MAX;
+    int bestMoveValue = INT32_MIN;
 
     for (int i = 1; i <= game->getNO_OF_ROWS(); i++) {
         for (int j = 1; j <= game->getNO_OF_COLUMNS(); j++) {

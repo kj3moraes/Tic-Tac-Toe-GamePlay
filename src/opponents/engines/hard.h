@@ -44,7 +44,7 @@ class Hard final : public Engine {
      * @param isMax 
      * @return int 
      */
-    int miniMax(Board *game, int depth, bool isMax);
+    int miniMax(Board *&game, int depth, bool isMax);
 
     /**
      * @brief Evaluates if the board is in a winning position
@@ -53,7 +53,7 @@ class Hard final : public Engine {
      * @param game Board to analyze. 
      * @return int - one of POSITIVE_SCORE, NEGATIVE_SCORE or NEUTRAL_SCORE
      */
-    int evaluateBoard(Board *game);
+    int evaluateBoard(Board *&game);
     
     public:
         Hard(char playerType);

@@ -39,9 +39,6 @@ int* Engine::generateRandomPosition() {
     int *randomCoords = new int[2];
     randomCoords[0] = uni(rng);
     randomCoords[1] = uni(rng);
-
-    std::cout << randomCoords[0] << std::endl;
-    std::cout << randomCoords[1] << std::endl;
     return randomCoords;
 }
 

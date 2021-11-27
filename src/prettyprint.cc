@@ -23,16 +23,16 @@
 using namespace std;
 
 void PrettyPrint::provideHelp() {
-    cout << bold << "TicTacToe Game" << unbold << endl;
+    cout << bold << "TicTacToe Game" << reset << endl;
     cout << "This is a text-based game interface that allows the user to play against an assortment of engines (Easy, Medium, Hard) or another Human" << endl;
     cout << "The game has a specific type of input that is discussed below. "<< RED << "Please stick to it else you might get an error" << RESET << endl;
-    cout << bold << "\nstart <player1_type> <player2_type>: \n\tstart: " << unbold << "Begins the game\n\t"
-            << bold << "<player1_type>: " << unbold << "Specifies the difficulty of the P1 (user: Human, easy: Easy Engine, medium: Medium Engine, hard:Hard Engine)\n\t"
-            << bold << "<player1_type>: " << unbold << "Specifies the difficulty of the P2 (user: Human, easy: Easy Engine, medium: Medium Engine, hard:Hard Engine)" << endl;
+    cout << bold << "\nstart <player1_type> <player2_type>: \n\tstart: " << reset << "Begins the game\n\t"
+            << bold << "<player1_type>: " << reset << "Specifies the difficulty of the P1 (user: Human, easy: Easy Engine, medium: Medium Engine, hard:Hard Engine)\n\t"
+            << bold << "<player1_type>: " << reset << "Specifies the difficulty of the P2 (user: Human, easy: Easy Engine, medium: Medium Engine, hard:Hard Engine)" << endl;
     
     cout << bold << "\n<player_type>: " << "The player_type can be one of 4 choices. The option menu prints this out." << endl;
-    cout << bold << "\ncond: " << unbold << "Prints the conditions for redistributing the source \n\tcode under the GNU GPLv3 License" << endl; 
-    cout << bold << "\nwarr: " << unbold << "Prints the warranty information under the GNU GPLv3 License" << endl; 
+    cout << bold << "\ncond: " << reset << "Prints the conditions for redistributing the source \n\tcode under the GNU GPLv3 License" << endl; 
+    cout << bold << "\nwarr: " << reset << "Prints the warranty information under the GNU GPLv3 License" << endl; 
 }
 
 void PrettyPrint::printHeader() {
@@ -57,9 +57,9 @@ void PrettyPrint::printHeader() {
     cout << std::setfill(' ') << std::setw(16) << "/  /";
     cout << std::setfill(' ') << std::setw(16) << "/  /" << endl;
 
-    cout << std::setfill(' ') << std::setw(6) << "---- " << bold << "i c" << unbold;
-    cout << std::setfill(' ') << std::setw(13) << "---- " << bold << "a c" << unbold;
-    cout << std::setfill(' ') << std::setw(13) << "---- " << bold << "o e" << unbold << endl;
+    cout << std::setfill(' ') << std::setw(6) << "---- " << bold << "i c" << reset;
+    cout << std::setfill(' ') << std::setw(13) << "---- " << bold << "a c" << reset;
+    cout << std::setfill(' ') << std::setw(13) << "---- " << bold << "o e" << reset << endl;
 
     cout << "\n" ;
     cout << "This is a text-based game interface for Tic-Tac-Toe created by Keane Moraes.\n"
@@ -67,7 +67,7 @@ void PrettyPrint::printHeader() {
 }
 
 void PrettyPrint::printLicense() {
-    cout << bold << "\nTicTacToeGame Copyright (C) 2021 Keane Moraes" << unbold << endl;
+    cout << bold << "\nTicTacToeGame Copyright (C) 2021 Keane Moraes" << reset << endl;
     cout << "This program comes with ABSOLUTELY NO WARRANTY; for details type `warr'." << endl;
     cout << "This is free software, and you are welcome to redistribute it under certain\n"
     "conditions;type `cond' for details." << endl;
@@ -90,7 +90,7 @@ void PrettyPrint::printRedistributionConditions() {
 }
 
 void PrettyPrint::printVersion() {
-    cout << "TicTacToeGame: v1.2.1" << endl;
+    cout << "TicTacToeGame: v3.1.1" << endl;
 }
 
 void PrettyPrint::printSelectedGameInfo() {
@@ -102,10 +102,10 @@ void PrettyPrint::printSelectedGameInfo() {
 
 void PrettyPrint::printOptions() {
     cout << "\nThe options for a game are :" << endl;
-    cout << "\t1. " << bold << "H" << unbold << "uman" << endl;
-    cout << "\t2. " << bold << "E" << unbold << "asy" << endl;
-    cout << "\t3. " << bold << "M" << unbold << "edium" << endl;
-    cout << "\t4. " << "H" << bold << "a" << unbold << "rd" << endl;
+    cout << "\t1. " << bold << "H" << reset << "uman" << endl;
+    cout << "\t2. " << bold << "E" << reset << "asy" << endl;
+    cout << "\t3. " << bold << "M" << reset << "edium" << endl;
+    cout << "\t4. " << "H" << bold << "a" << reset << "rd" << endl;
     cout << "\nEnter the either the numbered options or the character options\n"
         "for starting in the prompt below for BOTH player 1 and 2" << endl;
  }
@@ -114,6 +114,10 @@ std::ostream& bold(std::ostream& os) {
     return os << "\e[1m";
 }
 
-std::ostream& unbold(std::ostream& os) {
+std::ostream& red(std::ostream& os) {
+    return os << RED;
+}
+
+std::ostream& reset(std::ostream& os) {
     return os << "\e[0m"; 
 }

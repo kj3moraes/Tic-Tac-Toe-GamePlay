@@ -2,7 +2,9 @@
 #define HUMAN_H
 #include "player.h"
 #include "../services/board.h"
+#include "../prettyprint.h"
 #include <string>
+#include <sstream>
 #include <iostream>
 class Board;
 class Human: public Player {
