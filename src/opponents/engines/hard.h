@@ -59,7 +59,7 @@ class Hard final : public Engine {
         Hard(char playerType);
         ~Hard();
 
-        void makeAMove(Board *&game) override;
+        void makeAMove(Board *game) override;
 };
 
 #endif

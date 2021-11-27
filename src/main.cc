@@ -108,7 +108,7 @@ int main(int argc, char *argv[]) {
     string command, token;
     char playerDiff1, playerDiff2;
     Player *p1 = nullptr, *p2 = nullptr;
-    Board *playground = new Board(3,3, 'X', 'O', ' ');
+    unique_ptr<Board> playground = make_unique<Board>(3,3, 'X', 'O', ' ');
 
     PrettyPrint::printOptions();
     cout << ">> ";
@@ -161,10 +161,10 @@ int main(int argc, char *argv[]) {
     // GAME STARTS
     bool isWin;
     char playDecision;
-    while (!playground->isBoardFull()) {
-        p1->makeAMove(playground);
+    while (!playground.get()->isBoardFull()) {
+        p1->makeAMove(playground.get());
         playground->displayBoard();
-        isWin = Result::isWinner(playground, p1->getPlayerType());
+        isWin = Result::isWinner(playground.get(), p1->getPlayerType());
         if (isWin) {
             cout << "P1 Wins" << endl;
             // cout << "\nDo you want to play again (type 'y' or 'n'):";
@@ -179,9 +179,9 @@ int main(int argc, char *argv[]) {
             break;
         }
 
-        p2->makeAMove(playground);
+        p2->makeAMove(playground.get());
         playground->displayBoard();
-        isWin = Result::isWinner(playground, p2->getPlayerType());
+        isWin = Result::isWinner(playground.get(), p2->getPlayerType());
         if (isWin) {
             cout << "P2 Wins" << endl;
             // cout << "\nDo you want to play again (type 'y' or 'n'):";
@@ -197,6 +197,5 @@ int main(int argc, char *argv[]) {
         cout << "ITS A DRAW :( !" << endl;
     }
     cout << "Thank you for playing the game" << endl;
-    delete playground, p1, p2;
 }
 

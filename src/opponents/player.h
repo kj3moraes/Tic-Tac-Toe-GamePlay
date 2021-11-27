@@ -39,6 +39,6 @@ class Player {
          * given board game. 
          * @param game 
          */
-        virtual void makeAMove(Board *&game) = 0;
+        virtual void makeAMove(Board *game) = 0;
 };
 #endif

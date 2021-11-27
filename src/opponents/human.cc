@@ -28,7 +28,7 @@ Human::Human(char splayerType) {
 
 Human::~Human() {}
 
-void Human::makeAMove(Board *&game) {
+void Human::makeAMove(Board *game) {
     bool isInputValid;
     int row, col;
     std::string input;
