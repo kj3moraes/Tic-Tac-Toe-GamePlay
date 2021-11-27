@@ -44,6 +44,12 @@ class Board {
         char getO() const;
 
         /**
+         * @brief 
+         * 
+         */
+        void resetBoard();
+
+        /**
          * @brief Determines if the specified row and column
          * have a piece present
          * @param row row number

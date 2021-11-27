@@ -27,6 +27,14 @@ void Board::setBLANK(char BLANK) {
     this->BLANK = BLANK;
 }
 
+void Board::resetBoard() {
+    for (int i = 0; i < NO_OF_ROWS; i++) {
+        for (int j = 0; j < NO_OF_COLUMNS; j++) {
+            board[i][j] = BLANK;
+        }
+    }
+}
+
 int Board::getNO_OF_ROWS() const {
     return NO_OF_ROWS;
 }
@@ -91,6 +99,5 @@ void Board::displayBoard() const {
         }
         std::cout << "|" << std::endl;
     }
-    
     printHeader(NO_OF_ROWS);
 }

@@ -28,6 +28,6 @@ Easy::Easy(char playerType) {
 Easy::~Easy() {}    
 
 void Easy::makeAMove(Board *&game) {
-    std::cout << "\nThe easy engine is making its move..." << std::endl;
+    std::cout << "\nThe Easy engine is making its move..." << std::endl;
     placePieceRandomly(game);
 }

@@ -139,6 +139,7 @@ int main(int argc, char *argv[]) {
             s >> input;
             playground->setBLANK(input);
             cout << "User has redefined BLANK as " << input << endl;
+            playground->resetBoard();
         } else if (command == "menu") {
             PrettyPrint::printOptions();
         } else {
@@ -166,11 +167,15 @@ int main(int argc, char *argv[]) {
         isWin = Result::isWinner(playground, p1->getPlayerType());
         if (isWin) {
             cout << "P1 Wins" << endl;
-            cout << "\nDo you want to play again (type 'y' or 'n'):";
-            cin >> playDecision;
-            if (playDecision == 'y') {
-                main(argc, argv);
-            }
+            // cout << "\nDo you want to play again (type 'y' or 'n'):";
+            // cin >> playDecision;
+            // if (playDecision == 'y') {
+            //     main(argc, argv);
+            // }
+            break;
+        } 
+
+        if (playground->isBoardFull()) {
             break;
         }
 
@@ -179,15 +184,18 @@ int main(int argc, char *argv[]) {
         isWin = Result::isWinner(playground, p2->getPlayerType());
         if (isWin) {
             cout << "P2 Wins" << endl;
-            cout << "\nDo you want to play again (type 'y' or 'n'):";
-            cin >> playDecision;
-            if (playDecision == 'y') {
-                main(argc, argv);
-            }
+            // cout << "\nDo you want to play again (type 'y' or 'n'):";
+            // cin >> playDecision;
+            // if (playDecision == 'y') {
+            //     main(argc, argv);
+            // }
             break;
         }
     }
-    cout << "ITS A DRAW :( !" << endl;
+    
+    if (isWin == false) {
+        cout << "ITS A DRAW :( !" << endl;
+    }
     cout << "Thank you for playing the game" << endl;
     delete playground, p1, p2;
 }

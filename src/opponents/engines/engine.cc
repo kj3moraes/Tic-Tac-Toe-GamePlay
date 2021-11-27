@@ -48,7 +48,7 @@ int* Engine::generateRandomPosition() {
  */
 void Engine::placePieceRandomly(Board *&game) {
     int *randomCoords = generateRandomPosition();
-    if (game->isTileMarked(randomCoords[0], randomCoords[1])) {
+    while (game->isTileMarked(randomCoords[0], randomCoords[1])) {
         randomCoords = generateRandomPosition();
     }
     game->placePiece(randomCoords[0], randomCoords[1], this->playerType);

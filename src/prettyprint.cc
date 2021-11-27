@@ -42,6 +42,11 @@ void PrettyPrint::provideHelp() {
     cout << bold << "\n\tmenu  "  << reset << "Prints the options of player difficulty that the user can choose from" << endl;
     cout << bold << "\n\tcond  " << reset << "Prints the conditions for redistributing the source \n\tcode under the GNU GPLv3 License" << endl; 
     cout << bold << "\n\twarr  " << reset << "Prints the warranty information under the GNU GPLv3 License" << endl; 
+    cout << bold << "\n\texit  " << reset << "Exits the game" << endl; 
+
+    cout << bold << "\nINPUT OPTIONS (AS HUMAN PLAYER)" << endl;
+    cout << bold << "\t<row_number> <column_number>  " << reset << " Specifies your placement of piece." << endl;
+    cout << red << "\t" << "Remember to put one or more spaces between the row number and the column number" << reset << endl; 
 }
 
 void PrettyPrint::printHeader() {
