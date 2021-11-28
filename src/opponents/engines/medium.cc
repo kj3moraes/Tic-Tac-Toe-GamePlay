@@ -76,5 +76,4 @@ void Medium::makeAMove(Board *game) {
 
     // STEP 3: IF NONE, PLAY RANDOMLY
     placePieceRandomly(game);
-    game->displayBoard();
 }
