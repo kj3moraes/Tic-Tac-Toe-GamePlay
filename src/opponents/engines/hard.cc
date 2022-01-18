@@ -87,9 +87,9 @@ int Hard::miniMax(Board *&game, int depth, bool isMax) {
 }
 
 
-void Hard::makeAMove(Board *&game) {
+void Hard::makeAMove(Board *game) {
     std::cout << "\nThe Hard engine is making its move..." << std::endl;
-    int bestMove[]{0,0};
+    int bestMove[]{1,1};
     int bestMoveValue = INT32_MIN;
 
     for (int i = 1; i <= game->getNO_OF_ROWS(); i++) {

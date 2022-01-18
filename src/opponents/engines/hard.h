@@ -30,11 +30,11 @@ class Board;
 
 class Hard final : public Engine {
     
-    // USEFUL CONSTANTS FOR MINIMAX
+    // CONSTANTS FOR MINIMAX
     static const int NEGATIVE_SCORE =  -10;
     static const int POSITIVE_SCORE = 10;
     static const int NEUTRAL_SCORE = 0;
-    static const int MAX_DEPTH = 6;
+    static const int MAX_DEPTH = 8;
 
     /**
      * @brief 
@@ -59,7 +59,7 @@ class Hard final : public Engine {
         Hard(char playerType);
         ~Hard();
 
-        void makeAMove(Board *&game) override;
+        void makeAMove(Board *game) override;
 };
 
 #endif
