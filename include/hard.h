@@ -24,8 +24,8 @@
 #define HARD_H
 #include <cmath>
 #include "engine.h"
-#include "../../services/board.h"
-#include "../../services/result.h"
+#include "board.h"
+#include "result.h"
 class Board;
 
 class Hard final : public Engine {

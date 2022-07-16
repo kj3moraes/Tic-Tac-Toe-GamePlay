@@ -1,8 +1,8 @@
 #ifndef HUMAN_H
 #define HUMAN_H
 #include "player.h"
-#include "../services/board.h"
-#include "../prettyprint.h"
+#include "board.h"
+#include "prettyprint.h"
 #include <string>
 #include <sstream>
 #include <iostream>

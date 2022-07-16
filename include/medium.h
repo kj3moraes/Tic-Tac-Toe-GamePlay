@@ -20,8 +20,8 @@
  * 
  */
 #include "engine.h"
-#include "../../services/board.h"
-#include "../../services/result.h"
+#include "board.h"
+#include "result.h"
 #include <iostream>
 #ifndef MEDIUM_H
 #define MEDIUM_H

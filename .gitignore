@@ -31,7 +31,8 @@
 *.out
 *.app
 
-# Misc
+# Folder excludes and Misc
 /.vscode*
 *.json
 /build*
+/bin*

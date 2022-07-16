@@ -3,7 +3,7 @@
 
 #include <vector>
 #include <string>
-#include "./observers/observer.h"
+#include "observer.h"
 
 class Subject {
     private:

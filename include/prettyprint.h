@@ -25,7 +25,7 @@
 #include <iomanip>
 #include <iostream>
 
-class PrettyPrint final {
+class PrettyPrint {
     #define RED     "\033[31m"      /* Red */
     #define RESET   "\033[0m"       /* Default */
     public:

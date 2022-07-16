@@ -19,11 +19,12 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  * 
  */
-#include <iostream>
-#include "engine.h"
-#include "../../services/board.h"
 #ifndef EASY_H
 #define EASY_H
+
+#include <iostream>
+#include "engine.h"
+#include "board.h"
 class Board;
 
 class Easy final: public Engine {

@@ -26,15 +26,10 @@
 #include <sstream>
 #include <memory>
 #include <sstream>
+#include "tictactoe.h"
 #include "prettyprint.h"
-#include "opponents/player.h"
-#include "opponents/human.h"
-#include "opponents/engines/engine.h"
-#include "opponents/engines/easy.h"
-#include "opponents/engines/medium.h"
-#include "opponents/engines/hard.h"
-#include "services/board.h"
-#include "services/result.h"
+#include "board.h"
+#include "result.h"
 using namespace std;
 
 /**
