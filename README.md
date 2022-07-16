@@ -9,7 +9,7 @@ A text-based Tic-Tac-Toe game interface that offers 3 options to the player :
 ## How do I play the game ?
 
 1. Clone the repository
-2. Navigate into the `src` directory and open a terminal in that directory
+2. Navigate into the `bin` directory and open a terminal in that directory
 3. Type in `./TicTacToe`
 
 Refer to the Gameplay Instructions file to see how to format inputs in order to correctly play the game
