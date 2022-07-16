@@ -32,6 +32,6 @@
 *.app
 
 # Misc
-*.json
 /.vscode*
+*.json
 /build*
